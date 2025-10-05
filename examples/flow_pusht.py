@@ -159,6 +159,7 @@ def train():
             torch.save({'vision_encoder': nets.vision_encoder.state_dict(),
                         'noise_pred_net': nets.noise_pred_net.state_dict(),
                         }, PATH)
+            ema.restore(nets.parameters())
 
 
 ########################################################################

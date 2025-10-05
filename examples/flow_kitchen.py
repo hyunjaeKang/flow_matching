@@ -158,6 +158,7 @@ for epoch in range(num_epochs):
         torch.save({
             'noise_pred_net': noise_pred_net.state_dict(),
         }, PATH)
+         ema.restore(noise_pred_net.parameters())
 
 sys.exit(0)
 

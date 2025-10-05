@@ -164,6 +164,7 @@ for epoch in range(0, num_epochs):
                     'optimizer': optimizer.state_dict(),
                     'lr_scheduler': lr_scheduler.state_dict()
                     }, PATH)
+        ema.restore(noise_pred_net.parameters())
 
 sys.exit(0)
 
